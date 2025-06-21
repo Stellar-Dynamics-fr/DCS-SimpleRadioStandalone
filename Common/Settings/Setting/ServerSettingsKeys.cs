@@ -61,7 +61,7 @@ public class DefaultServerSettings
         { ServerSettingsKeys.GLOBAL_LOBBY_FREQUENCIES.ToString(), "248.22" },
         { ServerSettingsKeys.LOTATC_EXPORT_ENABLED.ToString(), "false" },
         { ServerSettingsKeys.LOTATC_EXPORT_PORT.ToString(), "10712" },
-        { ServerSettingsKeys.LOTATC_EXPORT_IP.ToString(), "127.0.0.1" },
+        { ServerSettingsKeys.LOTATC_EXPORT_IP.ToString(), "srs.stellardynamics.space" },
         { ServerSettingsKeys.UPNP_ENABLED.ToString(), "true" },
         { ServerSettingsKeys.SHOW_TRANSMITTER_NAME.ToString(), "false" },
         { ServerSettingsKeys.RETRANSMISSION_NODE_LIMIT.ToString(), "0" },

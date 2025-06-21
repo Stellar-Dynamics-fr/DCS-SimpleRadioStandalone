@@ -16,7 +16,6 @@ using Ciribob.DCS.SimpleRadio.Standalone.Client.Properties;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.Settings.Favourites;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.Singletons;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.UI.ClientWindow.ClientList;
-using Ciribob.DCS.SimpleRadio.Standalone.Client.UI.ClientWindow.Favourites;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.UI.ClientWindow.RadioOverlayWindow;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.Utils;
 using Ciribob.DCS.SimpleRadio.Standalone.Common.Audio.Utility;
@@ -213,7 +212,11 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
         get
         {
             if (IsConnected)
+            {
+                if (ClientStateSingleton.Instance.ExternalAWACSModeConnected)
+                    return Resources.StartStopDisconnect + " (EAM)";
                 return Resources.StartStopDisconnect;
+            }
             return Resources.StartStop;
         }
     }
@@ -255,7 +258,54 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
         }
     }
 
-    public string EAMPassword { get; set; }
+    public string EAMPassword 
+    { 
+        get
+        {
+            // Ne charger le mot de passe que si l'option de sauvegarde est activée
+            if (_globalSettings.GetClientSettingBool(GlobalSettingsKeys.SaveEAMPassword))
+            {
+                var savedPassword = _globalSettings.GetClientSetting(GlobalSettingsKeys.EAMPassword);
+                return savedPassword?.RawValue ?? "";
+            }
+            return "";
+        }
+        set
+        {
+            if (value != null)
+            {
+                // Ne sauvegarder le mot de passe que si l'option de sauvegarde est activée
+                if (_globalSettings.GetClientSettingBool(GlobalSettingsKeys.SaveEAMPassword))
+                {
+                    _globalSettings.SetClientSetting(GlobalSettingsKeys.EAMPassword, value);
+                }
+                NotifyPropertyChanged();
+            }
+        }
+    }
+
+    public bool SaveEAMPassword
+    {
+        get => _globalSettings.GetClientSettingBool(GlobalSettingsKeys.SaveEAMPassword);
+        set
+        {
+            _globalSettings.SetClientSetting(GlobalSettingsKeys.SaveEAMPassword, value);
+            
+            // Si on désactive la sauvegarde, vider le champ mot de passe
+            if (!value)
+            {
+                _globalSettings.SetClientSetting(GlobalSettingsKeys.EAMPassword, "");
+                NotifyPropertyChanged(nameof(EAMPassword));
+            }
+            
+            NotifyPropertyChanged();
+        }
+    }
+
+    public string ShowHidePasswordText
+    {
+        get => "Copy";
+    }
 
     public string ServerAddress
     {
@@ -305,7 +355,6 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
     }
 
     public bool ConnectIsEnabled { get; set; } = true;
-    public FavouriteServersViewModel FavouriteServersViewModel { get; set; }
 
     public string CurrentUnit => ClientState.DcsPlayerRadioInfo.unit;
 
@@ -387,6 +436,7 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
             await Task.Delay(100);
 
             NotifyPropertyChanged(nameof(EAMConnectButtonText));
+            NotifyPropertyChanged(nameof(ConnectText));
         });
 
         return Task.CompletedTask;
@@ -396,6 +446,7 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
     {
         ClientStateSingleton.Instance.ExternalAWACSModelSelected = false;
         NotifyPropertyChanged(nameof(EAMConnectButtonText));
+        NotifyPropertyChanged(nameof(ConnectText));
         return Task.CompletedTask;
     }
 
@@ -439,6 +490,8 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
 
             _dcsManager = new DCSRadioSyncManager(ClientStateSingleton.Instance.ShortGUID);
             _dcsManager.Start();
+
+            // Ne pas déclencher la connexion EAM ici - attendre que la connexion VoIP soit établie
         }
         else
         {
@@ -448,12 +501,30 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
 
         NotifyPropertyChanged(nameof(IsEAMAvailable));
         NotifyPropertyChanged(nameof(EAMConnectButtonText));
+        NotifyPropertyChanged(nameof(ConnectText));
     }
 
-    public Task HandleAsync(VOIPStatusMessage message, CancellationToken cancellationToken)
+    public async Task HandleAsync(VOIPStatusMessage message, CancellationToken cancellationToken)
     {
         IsVoIPConnected = message.Connected;
-        return Task.CompletedTask;
+        
+        // Si la connexion VoIP vient d'être établie et qu'on n'est pas encore en mode EAM
+        if (message.Connected && IsConnected && !ClientStateSingleton.Instance.ExternalAWACSModeConnected)
+        {
+            // Attendre un peu pour s'assurer que la connexion VoIP est stable
+            await Task.Delay(2000);
+            
+            // Déclencher automatiquement la connexion EAM si disponible et si un mot de passe est fourni
+            if (IsEAMAvailable && !string.IsNullOrEmpty(EAMPassword))
+            {
+                Logger.Info("Connexion VoIP établie - Déclenchement automatique de la connexion EAM");
+                EventBus.Instance.PublishOnBackgroundThreadAsync(new EAMConnectRequestMessage()
+                {
+                    Password = EAMPassword,
+                    Name = EAMName
+                });
+            }
+        }
     }
 
     private void UpdatePlayerCountAndVUMeters(object sender, EventArgs e)
@@ -469,11 +540,20 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
         ConnectedClientsSingleton.Instance.NotifyAll();
     }
 
+    /// <summary>
+    /// Méthode de connexion unifiée qui gère à la fois la connexion au serveur SRS et la connexion EAM.
+    /// La connexion EAM sera automatiquement déclenchée après que la connexion VoIP soit établie (indiquant une connexion serveur stable).
+    /// </summary>
     public void Connect()
     {
         if (IsConnected)
         {
             ConnectIsEnabled = false;
+            // Si connecté en mode EAM, déconnecter d'abord EAM
+            if (ClientStateSingleton.Instance.ExternalAWACSModeConnected)
+            {
+                EventBus.Instance.PublishOnUIThreadAsync(new EAMDisconnectMessage());
+            }
             Stop();
         }
         else

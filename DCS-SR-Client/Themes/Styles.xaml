@@ -6,17 +6,17 @@
 
 
     <!--Colors-->
-    <Color x:Key="WindowBackgroundColor">#444444</Color>
-    <Color x:Key="DarkBackgroundColor">#333333</Color>
-    <Color x:Key="LightBackgroundColor">#595959</Color>
-    <Color x:Key="BackgroundColor">#3D3D3D</Color>
-    <Color x:Key="DisabledBackgroundColor">#424242</Color>
-    <Color x:Key="LightDisabledBackgroundColor">#666666</Color>
+    <Color x:Key="WindowBackgroundColor">#1E1E1E</Color>
+    <Color x:Key="DarkBackgroundColor">#2D2D30</Color>
+    <Color x:Key="LightBackgroundColor">#3E3E42</Color>
+    <Color x:Key="BackgroundColor">#252526</Color>
+    <Color x:Key="DisabledBackgroundColor">#2A2A2A</Color>
+    <Color x:Key="LightDisabledBackgroundColor">#3A3A3A</Color>
 
-    <Color x:Key="ForegroundColor">#EFEFEF</Color>
+    <Color x:Key="ForegroundColor">#CCCCCC</Color>
 
-    <Color x:Key="HighlightColor">#BDBDBD</Color>
-    <Color x:Key="HotColor">#525252</Color>
+    <Color x:Key="HighlightColor">#007ACC</Color>
+    <Color x:Key="HotColor">#3E3E42</Color>
 
     <!--Brushes-->
     <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}" />
@@ -34,46 +34,46 @@
     <SolidColorBrush x:Key="ScrollViewerBackground" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="VerticalScrollBarBackground" Color="{StaticResource BackgroundColor}" />
     <SolidColorBrush x:Key="HorizontalScrollBarBackground" Color="{StaticResource BackgroundColor}" />
-    <SolidColorBrush x:Key="VerticalScrollBarThumb" Color="#808080" />
+    <SolidColorBrush x:Key="VerticalScrollBarThumb" Color="#5A5A5A" />
     <SolidColorBrush x:Key="ScrollBarDisabledBackground" Color="{StaticResource BackgroundColor}" />
-    <SolidColorBrush x:Key="ScrollBarHotThumb" Color="#CCCCCC" />
-    <SolidColorBrush x:Key="ScrollBarSelectedThumb" Color="#E5E5E5" />
+    <SolidColorBrush x:Key="ScrollBarHotThumb" Color="#7A7A7A" />
+    <SolidColorBrush x:Key="ScrollBarSelectedThumb" Color="#9A9A9A" />
     <SolidColorBrush x:Key="CornerBorder" Color="{StaticResource DarkBackgroundColor}" />
 
     <SolidColorBrush x:Key="TextBoxBorder" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="TextBoxBackground" Color="{StaticResource DarkBackgroundColor}" />
-    <SolidColorBrush x:Key="TextBoxDisabledForeground" Color="#8C8C8C" />
+    <SolidColorBrush x:Key="TextBoxDisabledForeground" Color="#6A6A6A" />
     <SolidColorBrush x:Key="TextBoxDisabledBackground" Color="{StaticResource DisabledBackgroundColor}" />
-    <SolidColorBrush x:Key="InactiveSelectionHighlightBrush" Color="#335C85" />
+    <SolidColorBrush x:Key="InactiveSelectionHighlightBrush" Color="#264F78" />
 
-    <SolidColorBrush x:Key="ComboBoxButtonNormalBackground" Color="#808080" />
+    <SolidColorBrush x:Key="ComboBoxButtonNormalBackground" Color="#5A5A5A" />
 
     <SolidColorBrush x:Key="ButtonNormalBackground" Color="{StaticResource DarkBackgroundColor}" />
-    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#4C4C4C" />
+    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#3A3A3A" />
 
     <SolidColorBrush x:Key="ButtonForeground" Color="{StaticResource ForegroundColor}" />
-    <SolidColorBrush x:Key="MouseOverButtonForeground" Color="#1B1B1B" />
+    <SolidColorBrush x:Key="MouseOverButtonForeground" Color="#FFFFFF" />
     <SolidColorBrush x:Key="ButtonBackground" Color="{StaticResource LightBackgroundColor}" />
     <SolidColorBrush x:Key="ButtonBorder" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="PressedButtonBackground" Color="{StaticResource DisabledBackgroundColor}" />
-    <SolidColorBrush x:Key="MouseOverButtonBackground" Color="#AAAAAA" />
+    <SolidColorBrush x:Key="MouseOverButtonBackground" Color="#007ACC" />
     <SolidColorBrush x:Key="DisabledButtonBackground" Color="{StaticResource LightDisabledBackgroundColor}" />
     <SolidColorBrush x:Key="DisabledButtonForeground" Color="{StaticResource DisabledBackgroundColor}" />
 
     <SolidColorBrush x:Key="Expander.Background" Color="{StaticResource LightBackgroundColor}" />
     <SolidColorBrush x:Key="Expander.MouseOver.Arrow.Stroke" Color="{StaticResource ForegroundColor}" />
     <SolidColorBrush x:Key="Expander.Disabled.Arrow.Stroke" Color="{StaticResource LightDisabledBackgroundColor}" />
-    <SolidColorBrush x:Key="Expander.Static.Arrow.Stroke" Color="#AAAAAA" />
+    <SolidColorBrush x:Key="Expander.Static.Arrow.Stroke" Color="#7A7A7A" />
 
     <SolidColorBrush x:Key="CheckBoxFillNormal" Color="{StaticResource LightDisabledBackgroundColor}" />
     <SolidColorBrush x:Key="CheckBoxMouseOverStroke" Color="{StaticResource ForegroundColor}" />
     <SolidColorBrush x:Key="CheckBoxDisabledStroke" Color="{StaticResource DisabledBackgroundColor}" />
-    <SolidColorBrush x:Key="CheckBoxDisabledForeground" Color="#939393" />
+    <SolidColorBrush x:Key="CheckBoxDisabledForeground" Color="#6A6A6A" />
     <SolidColorBrush x:Key="CheckBoxStroke" Color="{StaticResource DarkBackgroundColor}" />
 
     <SolidColorBrush x:Key="RadioButtonMouseOverStroke" Color="{StaticResource ForegroundColor}" />
     <SolidColorBrush x:Key="RadioButtonDisabledStroke" Color="{StaticResource DisabledBackgroundColor}" />
-    <SolidColorBrush x:Key="RadioButtonDisabledForeground" Color="#939393" />
+    <SolidColorBrush x:Key="RadioButtonDisabledForeground" Color="#6A6A6A" />
     <SolidColorBrush x:Key="RadioButtonStroke" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="RadioButtonForeground" Color="{StaticResource ForegroundColor}" />
     <SolidColorBrush x:Key="RadioButtonBackground" Color="{StaticResource LightDisabledBackgroundColor}" />
@@ -81,31 +81,31 @@
     <SolidColorBrush x:Key="ListBorder" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="ListBackground" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="SelectedListItem" Color="{StaticResource HighlightColor}" />
-    <SolidColorBrush x:Key="SelectedListItemForeground" Color="{StaticResource DarkBackgroundColor}" />
-    <SolidColorBrush x:Key="MouseOverListItem" Color="#4A4A4A" />
+    <SolidColorBrush x:Key="SelectedListItemForeground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="MouseOverListItem" Color="#3A3A3A" />
 
     <SolidColorBrush x:Key="TreeViewBackground" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="TreeViewDisabledForeground" Color="{StaticResource LightDisabledBackgroundColor}" />
 
-    <SolidColorBrush x:Key="DisabledMenuForeground" Color="#656565" />
-    <SolidColorBrush x:Key="MenuBackground" Color="#3A3A3A" />
+    <SolidColorBrush x:Key="DisabledMenuForeground" Color="#5A5A5A" />
+    <SolidColorBrush x:Key="MenuBackground" Color="#2D2D30" />
     <SolidColorBrush x:Key="MenuItemSelectionFill" Color="{StaticResource HighlightColor}" />
-    <SolidColorBrush x:Key="SubMenuBackgroundBrush" Color="#3A3A3A" />
+    <SolidColorBrush x:Key="SubMenuBackgroundBrush" Color="#2D2D30" />
     <SolidColorBrush x:Key="MenuItemPressedFill" Color="{StaticResource HighlightColor}" />
     <SolidColorBrush x:Key="SubMenuBorderBrush" Color="{StaticResource LightBackgroundColor}" />
     <SolidColorBrush x:Key="SubMenuRepeatButtonBrush" Color="{StaticResource HotColor}" />
-    <SolidColorBrush x:Key="SubMenuHoverRepeatButtonBrush" Color="#7F7F7F" />
-    <SolidColorBrush x:Key="MenuSeparatorBrush" Color="#4C4C4C" />
+    <SolidColorBrush x:Key="SubMenuHoverRepeatButtonBrush" Color="#5A5A5A" />
+    <SolidColorBrush x:Key="MenuSeparatorBrush" Color="#3A3A3A" />
 
     <SolidColorBrush x:Key="DataGridBackgroundBrush" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="DataGridHeaderBackgroundBrush" Color="{StaticResource DarkBackgroundColor}" />
-    <SolidColorBrush x:Key="DataGridHeaderMouseOverBrush" Color="#AAAAAA" />
+    <SolidColorBrush x:Key="DataGridHeaderMouseOverBrush" Color="#7A7A7A" />
     <SolidColorBrush x:Key="DataGridHeaderBorderBrush" Color="{StaticResource DisabledBackgroundColor}" />
     <SolidColorBrush x:Key="DataGridRowBorderBrush" Color="{StaticResource DisabledBackgroundColor}" />
     <SolidColorBrush x:Key="DataGridRowBackgroundBrush" Color="{StaticResource DarkBackgroundColor}" />
     <SolidColorBrush x:Key="DataGridRowSelectedBrush" Color="{StaticResource HighlightColor}" />
     <SolidColorBrush x:Key="GridLinesBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="Red" />
+    <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#007ACC" />
 
     <Geometry x:Key="MenuScrollDownArrowGeometry">M-0.7,5.2 L-2.2,6.7 3.6,12.6 9.5,6.7 8,5.2 3.6,9.6 z</Geometry>
     <Geometry x:Key="MenuScrollUpArrowGeometry">M-2.2,10.9 L-0.7,12.4 3.7,8 8,12.4 9.5,10.9 3.7,5 z</Geometry>

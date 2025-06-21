@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Forms;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.Settings.Favourites;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.UI.ClientWindow.ClientSettingsControl.Model;
-using Ciribob.DCS.SimpleRadio.Standalone.Client.UI.ClientWindow.Favourites;
 using Ciribob.DCS.SimpleRadio.Standalone.Client.Utils;
 using Ciribob.DCS.SimpleRadio.Standalone.Common.Helpers;
 using Ciribob.DCS.SimpleRadio.Standalone.Common.Network.Singletons;
@@ -51,11 +50,12 @@ public partial class MainWindow : MetroWindow
         // Initialise sounds
         Sounds.Init();
 
+        // Initialize password display
+        this.Loaded += MainWindow_Loaded;
+
         WindowStartupLocation = WindowStartupLocation.Manual;
         Left = _globalSettings.GetPositionSetting(GlobalSettingsKeys.ClientX).DoubleValue;
         Top = _globalSettings.GetPositionSetting(GlobalSettingsKeys.ClientY).DoubleValue;
-
-        Title = Title + " - " + UpdaterChecker.VERSION;
 
         if (_globalSettings.GetClientSettingBool(GlobalSettingsKeys.StartMinimised))
         {
@@ -69,12 +69,7 @@ public partial class MainWindow : MetroWindow
             Logger.Info("Started DCS SRS Client " + UpdaterChecker.VERSION);
         }
 
-        DataContext = new MainWindowViewModel()
-        {
-            FavouriteServersViewModel = new FavouriteServersViewModel(new CsvFavouriteServerStore())
-        };
-
-        FavouriteServersView.DataContext = ((MainWindowViewModel)DataContext).FavouriteServersViewModel;
+        DataContext = new MainWindowViewModel();
 
         //TODO make this a singleton with a callback to check for updates
         UpdaterChecker.Instance.CheckForUpdate(
@@ -114,12 +109,9 @@ public partial class MainWindow : MetroWindow
 
 
         //TODO move this
-        UpdatePresetsFolderLabel();
-
-        InitFlowDocument();
+        //UpdatePresetsFolderLabel();
 
         CheckWindowVisibility();
-
 
         var args = Environment.GetCommandLineArgs();
 
@@ -269,61 +261,60 @@ public partial class MainWindow : MetroWindow
         base.OnStateChanged(e);
     }
 
-    private void LaunchAddressTab(object sender, RoutedEventArgs e)
+    //private void UpdatePresetsFolderLabel()
+    //{
+    //    var presetsFolder = _globalSettings.GetClientSetting(GlobalSettingsKeys.LastPresetsFolder).RawValue;
+    //    if (!string.IsNullOrWhiteSpace(presetsFolder))
+    //    {
+    //        PresetsFolderLabel.Content = Path.GetFileName(presetsFolder);
+    //        PresetsFolderLabel.ToolTip = presetsFolder;
+    //    }
+    //    else
+    //    {
+    //        PresetsFolderLabel.Content = "(default)";
+    //        PresetsFolderLabel.ToolTip = Directory.GetCurrentDirectory();
+    //    }
+    //}
+
+    //private void PresetsFolderBrowseButton_Click(object sender, RoutedEventArgs e)
+    //{
+    //    var selectPresetsFolder = new FolderBrowserDialog();
+    //    selectPresetsFolder.SelectedPath = PresetsFolderLabel.ToolTip.ToString();
+    //    if (selectPresetsFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+    //    {
+    //        _globalSettings.SetClientSetting(GlobalSettingsKeys.LastPresetsFolder, selectPresetsFolder.SelectedPath);
+    //        UpdatePresetsFolderLabel();
+    //    }
+    //}
+
+    //private void PresetsFolderResetButton_Click(object sender, RoutedEventArgs e)
+    //{
+    //    _globalSettings.SetClientSetting(GlobalSettingsKeys.LastPresetsFolder, string.Empty);
+    //    UpdatePresetsFolderLabel();
+    //}
+
+    private void ToggleServerSettings_Click(object sender, RoutedEventArgs e)
     {
-        TabControl.SelectedItem = FavouritesSeversTab;
+
     }
 
-    private void UpdatePresetsFolderLabel()
+    private void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
-        var presetsFolder = _globalSettings.GetClientSetting(GlobalSettingsKeys.LastPresetsFolder).RawValue;
-        if (!string.IsNullOrWhiteSpace(presetsFolder))
-        {
-            PresetsFolderLabel.Content = Path.GetFileName(presetsFolder);
-            PresetsFolderLabel.ToolTip = presetsFolder;
-        }
-        else
-        {
-            PresetsFolderLabel.Content = "(default)";
-            PresetsFolderLabel.ToolTip = Directory.GetCurrentDirectory();
-        }
+
     }
 
-    private void PresetsFolderBrowseButton_Click(object sender, RoutedEventArgs e)
+    private void ExternalAWACSModePassword_PasswordChanged(object sender, RoutedEventArgs e)
     {
-        var selectPresetsFolder = new FolderBrowserDialog();
-        selectPresetsFolder.SelectedPath = PresetsFolderLabel.ToolTip.ToString();
-        if (selectPresetsFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-        {
-            _globalSettings.SetClientSetting(GlobalSettingsKeys.LastPresetsFolder, selectPresetsFolder.SelectedPath);
-            UpdatePresetsFolderLabel();
-        }
+        var viewModel = (MainWindowViewModel)DataContext;
+        var passwordBox = (System.Windows.Controls.PasswordBox)sender;
+        viewModel.EAMPassword = passwordBox.Password;
     }
 
-    private void PresetsFolderResetButton_Click(object sender, RoutedEventArgs e)
+    private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        _globalSettings.SetClientSetting(GlobalSettingsKeys.LastPresetsFolder, string.Empty);
-        UpdatePresetsFolderLabel();
-    }
-
-    private void InitFlowDocument()
-    {
-        //make hyperlinks work
-        var hyperlinks = WPFElementHelper.GetVisuals(AboutFlowDocument).OfType<Hyperlink>();
-        foreach (var link in hyperlinks)
-            link.RequestNavigate += (sender, args) =>
-            {
-                try
-                {
-                    Process.Start(new ProcessStartInfo(args.Uri.AbsoluteUri)
-                        { UseShellExecute = true });
-                }
-                catch (Exception)
-                {
-                    // ignored
-                }
-
-                args.Handled = true;
-            };
+        // Charger le mot de passe sauvegardé dans le PasswordBox
+        var viewModel = (MainWindowViewModel)DataContext;
+        var passwordBox = ExternalAWACSModePassword;
+        passwordBox.Password = viewModel.EAMPassword ?? "";
     }
 }

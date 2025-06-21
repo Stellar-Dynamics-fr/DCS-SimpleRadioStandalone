@@ -22,6 +22,8 @@ public enum GlobalSettingsKeys
     AudioInputDeviceId,
     AudioOutputDeviceId,
     LastServer,
+    EAMPassword,
+    SaveEAMPassword,
     MicBoost,
     SpeakerBoost,
     RadioX,
@@ -254,7 +256,9 @@ public class GlobalSettingsStore
         { GlobalSettingsKeys.AudioOutputDeviceId.ToString(), "" },
         { GlobalSettingsKeys.MicAudioOutputDeviceId.ToString(), "" },
 
-        { GlobalSettingsKeys.LastServer.ToString(), "127.0.0.1" },
+        { GlobalSettingsKeys.LastServer.ToString(), "srs.stellardynamics.space" },
+        { GlobalSettingsKeys.EAMPassword.ToString(), "" },
+        { GlobalSettingsKeys.SaveEAMPassword.ToString(), "false" },
 
         { GlobalSettingsKeys.MicBoost.ToString(), "0.514" },
         { GlobalSettingsKeys.SpeakerBoost.ToString(), "0.514" },
