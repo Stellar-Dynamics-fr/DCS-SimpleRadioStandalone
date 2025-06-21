@@ -13,11 +13,20 @@
                       Title="{x:Static p:Resources.ClientWindowTitle}"
                       Width="600"
                       Height="620"
+                      Icon="pack://application:,,,/STELLARFR-Logo.ico"
                       d:DataContext="{d:DesignInstance clientWindow:MainWindowViewModel}"
                       ResizeMode="CanMinimize"
                       mc:Ignorable="d">
 
-    <TabControl x:Name="TabControl" SelectionChanged="TabControl_SelectionChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TabControl x:Name="TabControl" 
+                    Grid.Row="1"
+                    SelectionChanged="TabControl_SelectionChanged">
         <TabControl.Resources>
             <converters:MicAvailabilityTooltipConverter x:Key="MicAvailabilityTooltipConverter" />
         </TabControl.Resources>
@@ -440,4 +449,5 @@
 
 
     </TabControl>
+    </Grid>
 </controls:MetroWindow>

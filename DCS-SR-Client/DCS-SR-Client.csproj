@@ -29,7 +29,7 @@
         <AssemblyVersion>2.2.0.3</AssemblyVersion>
         <FileVersion>2.2.0.3</FileVersion>
         <Version>2.2.0.3</Version>
-        <ApplicationIcon>audio-headset.ico</ApplicationIcon>
+        <ApplicationIcon>STELLARFR-Logo.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup>
         <StartupObject>Ciribob.DCS.SimpleRadio.Standalone.Client.App</StartupObject>
@@ -313,7 +313,9 @@
         </Content>
     </ItemGroup>
     <ItemGroup>
-
+        <Resource Include="STELLARFR-Logo.ico" />
+    </ItemGroup>
+    <ItemGroup>
         <PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25103.5738" />
         <PackageReference Include="Fody" Version="6.9.2" />
         <PackageReference Include="MahApps.Metro" Version="2.4.10" />
