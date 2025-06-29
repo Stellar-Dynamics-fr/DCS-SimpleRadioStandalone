@@ -33,9 +33,10 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
-; Uncomment the following line to run in non administrative install mode (install for current user only).
+; Installation multi-utilisateur uniquement (pour tous les utilisateurs)
 ;PrivilegesRequired=lowest
-PrivilegesRequiredOverridesAllowed=dialog
+PrivilegesRequired=admin
+;PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=F:\Autre\DCS-SimpleRadioStandalone\DCS-SR-Client
 OutputBaseFilename=ClientSRSStellarDynamicsSetup
 SetupIconFile=F:\Autre\DCS-SimpleRadioStandalone\DCS-SR-Client\STELLARFR-Logo.ico

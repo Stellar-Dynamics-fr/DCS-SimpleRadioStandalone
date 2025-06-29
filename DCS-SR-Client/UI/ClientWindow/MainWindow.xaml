@@ -166,7 +166,7 @@
                                                 HorizontalAlignment="Center" />
                                 </StackPanel>
                             
-                                <StackPanel Margin="0"
+                                <StackPanel Margin="5,0,0,0"
                                             HorizontalAlignment="Center"
                                             Orientation="Vertical">
                                     <Label x:Name="ExternalAWACSModePasswordLabel"
@@ -174,13 +174,13 @@
                                             HorizontalContentAlignment="Center"
                                             Margin="0,0,0,0"
                                             Content="{x:Static p:Resources.ExternalAWACSModePasswordLabel}" />
-                                    <StackPanel Margin="0,0,10,0"
+                                    <StackPanel Margin="0,0,0,0"
                                                 HorizontalAlignment="Center"
                                                 Orientation="Horizontal">
                                         <PasswordBox x:Name="ExternalAWACSModePassword"
-                                                Width="170"
+                                                Width="200"
                                                 Height="23"
-                                                Margin="0,0,5,0"
+                                                Margin="0,0,0,0"
                                                 PasswordChanged="ExternalAWACSModePassword_PasswordChanged"
                                                 HorizontalAlignment="Center" />
                                     </StackPanel>

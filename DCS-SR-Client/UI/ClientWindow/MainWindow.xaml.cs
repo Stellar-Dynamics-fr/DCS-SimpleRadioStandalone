@@ -70,6 +70,10 @@ public partial class MainWindow : MetroWindow
         }
 
         DataContext = new MainWindowViewModel();
+        
+        // S'abonner à l'événement de mise à jour du PasswordBox
+        var viewModel = (MainWindowViewModel)DataContext;
+        viewModel.PasswordBoxUpdateRequested += UpdatePasswordBoxFromViewModel;
 
         //TODO make this a singleton with a callback to check for updates
         // UpdaterChecker.Instance.CheckForUpdate(
@@ -244,6 +248,13 @@ public partial class MainWindow : MetroWindow
 
     protected override void OnClosing(CancelEventArgs e)
     {
+        // Se désabonner de l'événement
+        var viewModel = (MainWindowViewModel)DataContext;
+        if (viewModel != null)
+        {
+            viewModel.PasswordBoxUpdateRequested -= UpdatePasswordBoxFromViewModel;
+        }
+
         ((MainWindowViewModel)DataContext).OnClosing();
 
         _globalSettings.SetPositionSetting(GlobalSettingsKeys.ClientX, Left);
@@ -308,14 +319,44 @@ public partial class MainWindow : MetroWindow
         var viewModel = (MainWindowViewModel)DataContext;
         var passwordBox = (System.Windows.Controls.PasswordBox)sender;
         viewModel.EAMPassword = passwordBox.Password;
+        
+        // Mettre à jour le mot de passe actuel du PasswordBox dans le ViewModel
+        viewModel.UpdateCurrentPasswordBoxValue(passwordBox.Password);
+    }
+
+    private void UpdatePasswordBoxFromViewModel()
+    {
+        var viewModel = (MainWindowViewModel)DataContext;
+        var passwordBox = ExternalAWACSModePassword;
+        
+        if (viewModel.SaveEAMPassword)
+        {
+            // Si la sauvegarde est activée, charger le mot de passe sauvegardé
+            passwordBox.Password = viewModel.EAMPassword ?? "";
+        }
+        // Si la sauvegarde est désactivée, ne pas modifier le contenu du PasswordBox
+        // L'utilisateur peut continuer à utiliser le mot de passe saisi
+        
+        // Mettre à jour le mot de passe actuel du PasswordBox dans le ViewModel
+        viewModel.UpdateCurrentPasswordBoxValue(passwordBox.Password);
     }
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        // Charger le mot de passe sauvegardé dans le PasswordBox
+        // Charger le mot de passe sauvegardé dans le PasswordBox seulement si l'option de sauvegarde est activée
         var viewModel = (MainWindowViewModel)DataContext;
         var passwordBox = ExternalAWACSModePassword;
-        passwordBox.Password = viewModel.EAMPassword ?? "";
+        
+        // Vérifier si l'option de sauvegarde est activée avant de charger le mot de passe
+        if (viewModel.SaveEAMPassword)
+        {
+            passwordBox.Password = viewModel.EAMPassword ?? "";
+        }
+        // Si la sauvegarde n'est pas activée, laisser le PasswordBox vide
+        // L'utilisateur devra saisir le mot de passe manuellement
+        
+        // Mettre à jour le mot de passe actuel du PasswordBox dans le ViewModel
+        viewModel.UpdateCurrentPasswordBoxValue(passwordBox.Password);
     }
 
     private void ClientSettings_Loaded(object sender, RoutedEventArgs e)

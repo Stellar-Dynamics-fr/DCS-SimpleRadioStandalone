@@ -58,6 +58,9 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
 
     private RadioOverlayWindow.RadioOverlayWindow _singleRadioOverlay;
 
+    // Propriété pour stocker le mot de passe actuel du PasswordBox
+    private string _currentPasswordBoxValue = "";
+
     public MainWindowViewModel()
     {
         _audioManager = new AudioManager(AudioOutput.WindowsN);
@@ -115,7 +118,7 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
             {
                 EventBus.Instance.PublishOnBackgroundThreadAsync(new EAMConnectRequestMessage()
                 {
-                    Password = EAMPassword,
+                    Password = _currentPasswordBoxValue,
                     Name = EAMName
                 });
             }
@@ -274,6 +277,9 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
         {
             if (value != null)
             {
+                // Mettre à jour le mot de passe actuel du PasswordBox
+                UpdateCurrentPasswordBoxValue(value);
+                
                 // Ne sauvegarder le mot de passe que si l'option de sauvegarde est activée
                 if (_globalSettings.GetClientSettingBool(GlobalSettingsKeys.SaveEAMPassword))
                 {
@@ -291,15 +297,41 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
         {
             _globalSettings.SetClientSetting(GlobalSettingsKeys.SaveEAMPassword, value);
             
-            // Si on désactive la sauvegarde, vider le champ mot de passe
+            // Si on désactive la sauvegarde, supprimer le mot de passe sauvegardé mais garder le mot de passe actuel
             if (!value)
             {
                 _globalSettings.SetClientSetting(GlobalSettingsKeys.EAMPassword, "");
-                NotifyPropertyChanged(nameof(EAMPassword));
+            }
+            else
+            {
+                // Si on active la sauvegarde, sauvegarder le mot de passe actuel
+                if (!string.IsNullOrEmpty(_currentPasswordBoxValue))
+                {
+                    _globalSettings.SetClientSetting(GlobalSettingsKeys.EAMPassword, _currentPasswordBoxValue);
+                }
             }
             
+            // Notifier les changements pour que l'interface se mette à jour
+            NotifyPropertyChanged(nameof(EAMPassword));
             NotifyPropertyChanged();
+            
+            // Déclencher un événement pour informer l'interface qu'elle doit mettre à jour le PasswordBox
+            OnPasswordBoxUpdateRequested();
         }
+    }
+
+    // Événement pour notifier que le PasswordBox doit être mis à jour
+    public event Action PasswordBoxUpdateRequested;
+    
+    protected virtual void OnPasswordBoxUpdateRequested()
+    {
+        PasswordBoxUpdateRequested?.Invoke();
+    }
+
+    // Méthode pour mettre à jour le mot de passe actuel du PasswordBox
+    public void UpdateCurrentPasswordBoxValue(string password)
+    {
+        _currentPasswordBoxValue = password ?? "";
     }
 
     public string ShowHidePasswordText
@@ -515,12 +547,12 @@ public class MainWindowViewModel : PropertyChangedBaseClass, IHandle<TCPClientSt
             await Task.Delay(2000);
             
             // Déclencher automatiquement la connexion EAM si disponible et si un mot de passe est fourni
-            if (IsEAMAvailable && !string.IsNullOrEmpty(EAMPassword))
+            if (IsEAMAvailable && !string.IsNullOrEmpty(_currentPasswordBoxValue))
             {
                 Logger.Info("Connexion VoIP établie - Déclenchement automatique de la connexion EAM");
                 EventBus.Instance.PublishOnBackgroundThreadAsync(new EAMConnectRequestMessage()
                 {
-                    Password = EAMPassword,
+                    Password = _currentPasswordBoxValue,
                     Name = EAMName
                 });
             }
