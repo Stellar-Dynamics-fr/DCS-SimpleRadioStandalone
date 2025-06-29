@@ -9,20 +9,20 @@
              d:DesignHeight="450" d:DesignWidth="575">
     <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible">
         <StackPanel Orientation="Vertical">
-            <Button Width="150px" Content="Rescan Input Devices" Click="Rescan_OnClick" />
+            <Button Width="170px" Content="Recherche des périphériques" Click="Rescan_OnClick" />
 
             <StackPanel Orientation="Horizontal">
                 <Label
-                    Margin="305,0,0,0"
+                    Margin="260,0,0,0"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
-                    Content="Device" />
+                    Content="Périphérique" />
 
                 <Label
-                    Margin="70,0,0,0"
+                    Margin="50,0,0,0"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
-                    Content="Button" />
+                    Content="Touche" />
             </StackPanel>
 
 

@@ -317,4 +317,9 @@ public partial class MainWindow : MetroWindow
         var passwordBox = ExternalAWACSModePassword;
         passwordBox.Password = viewModel.EAMPassword ?? "";
     }
+
+    private void ClientSettings_Loaded(object sender, RoutedEventArgs e)
+    {
+
+    }
 }

@@ -444,7 +444,7 @@
         </TabItem>
 
         <TabItem Header="{x:Static p:Resources.SettingsTab}">
-            <clientSettingsControl:ClientSettings />
+            <clientSettingsControl:ClientSettings Loaded="ClientSettings_Loaded" />
         </TabItem>
 
 

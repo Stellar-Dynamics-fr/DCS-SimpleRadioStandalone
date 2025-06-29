@@ -85,8 +85,8 @@ public partial class InputBindingControl : UserControl, IHandle<ProfileChangedMe
             }
             else
             {
-                DeviceText.Text = "None";
-                Device.Text = "None";
+                DeviceText.Text = "Aucun";
+                Device.Text = "Aucun";
             }
 
             if (currentInputProfile.ContainsKey(ModifierBinding))
@@ -98,8 +98,8 @@ public partial class InputBindingControl : UserControl, IHandle<ProfileChangedMe
             }
             else
             {
-                ModifierText.Text = "None";
-                ModifierDevice.Text = "None";
+                ModifierText.Text = "Aucun";
+                ModifierDevice.Text = "Aucun";
             }
         }
     }
@@ -143,8 +143,8 @@ public partial class InputBindingControl : UserControl, IHandle<ProfileChangedMe
     {
         GlobalSettingsStore.Instance.ProfileSettingsStore.RemoveControlSetting(ControlInputBinding);
 
-        Device.Text = "None";
-        DeviceText.Text = "None";
+        Device.Text = "Aucun";
+        DeviceText.Text = "Aucun";
     }
 
     private void Modifier_Click(object sender, RoutedEventArgs e)
@@ -169,7 +169,7 @@ public partial class InputBindingControl : UserControl, IHandle<ProfileChangedMe
     private void ModifierClear_Click(object sender, RoutedEventArgs e)
     {
         GlobalSettingsStore.Instance.ProfileSettingsStore.RemoveControlSetting(ModifierBinding);
-        ModifierDevice.Text = "None";
-        ModifierText.Text = "None";
+        ModifierDevice.Text = "Aucun";
+        ModifierText.Text = "Aucun";
     }
 }
