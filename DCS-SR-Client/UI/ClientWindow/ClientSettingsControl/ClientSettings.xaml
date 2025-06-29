@@ -28,22 +28,28 @@
                                 <RowDefinition />
 
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AutoConnectEnabled}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AutoConnectEnabled}" />
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AutoConnectEnabled, Mode=TwoWay}" />
 
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AutoConnectPrompt}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AutoConnectPrompt}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="1"
@@ -51,11 +57,14 @@
                                 ToggleValue="{Binding AutoConnectPrompt, Mode=TwoWay}" />
 
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AutoConnectMismatchPrompt}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AutoConnectMismatchPrompt}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="2"
@@ -79,11 +88,14 @@
                                 <RowDefinition />
 
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.ResetRadioOverlay}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.ResetRadioOverlay}" />
 
                             <Button Grid.Row="0"
                                     Grid.Column="1"
@@ -93,55 +105,70 @@
                                     Content="{x:Static p:Resources.Reset}" />
 
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioOverlayTaskbarItem}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioOverlayTaskbarItem}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 ToggleValue="{Binding RadioOverlayTaskbarItem, Mode=TwoWay}" />
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RefocusDCS}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RefocusDCS}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 ToggleValue="{Binding RefocusDCS, Mode=TwoWay}" />
 
-                            <Label Grid.Row="3"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Minimisetotray}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Minimisetotray}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="3"
                                 Grid.Column="1"
                                 ToggleValue="{Binding MinimiseToTray, Mode=TwoWay}" />
 
-                            <Label Grid.Row="4"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Startminimised}" />
+                            <TextBlock Grid.Row="4"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Startminimised}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="4"
                                 Grid.Column="1"
                                 ToggleValue="{Binding StartMinimised, Mode=TwoWay}" />
 
-                            <Label Grid.Row="5"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.ShowTransmitterName}" />
+                            <TextBlock Grid.Row="5"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.ShowTransmitterName}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="5"
@@ -169,11 +196,14 @@
 
                             </Grid.RowDefinitions>
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.MicAGC}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.MicAGC}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="1"
@@ -181,11 +211,14 @@
                                 ToggleValue="{Binding MicAGC, Mode=TwoWay}" />
 
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.MicDenoise}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.MicDenoise}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="2"
@@ -209,22 +242,28 @@
 
                             </Grid.RowDefinitions>
 
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.VOXEnabled}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.VOXEnabled}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 ToggleValue="{Binding VOXEnabled, Mode=TwoWay}" />
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.VOXMinimimumTXTime}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.VOXMinimimumTXTime}" />
 
                             <StackPanel Grid.Row="1"
                                         Grid.Column="1" Margin="10">
@@ -247,23 +286,26 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" FontSize="10"
-                                           Content="{x:Static p:Resources.VOXMinimimumTXTime0}"
+                                    <TextBlock Grid.Column="0" FontSize="10"
+                                           Text="{x:Static p:Resources.VOXMinimimumTXTime0}"
                                            HorizontalAlignment="Left" />
-                                    <Label Grid.Column="1" FontSize="10"
-                                           Content="{x:Static p:Resources.VOXMinimimumTXTime1000}"
+                                    <TextBlock Grid.Column="1" FontSize="10"
+                                           Text="{x:Static p:Resources.VOXMinimimumTXTime1000}"
                                            HorizontalAlignment="Center" />
-                                    <Label Grid.Column="2" FontSize="10"
-                                           Content="{x:Static p:Resources.VOXMinimimumTXTime2000}"
+                                    <TextBlock Grid.Column="2" FontSize="10"
+                                           Text="{x:Static p:Resources.VOXMinimimumTXTime2000}"
                                            HorizontalAlignment="Right" />
                                 </Grid>
                             </StackPanel>
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.VOXMode}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.VOXMode}" />
 
                             <StackPanel Grid.Row="2"
                                         Grid.Column="1" Margin="10">
@@ -288,19 +330,22 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" FontSize="10" Content="{x:Static p:Resources.VOXModeHigher}"
+                                    <TextBlock Grid.Column="0" FontSize="10" Text="{x:Static p:Resources.VOXModeHigher}"
                                            HorizontalAlignment="Left" />
-                                    <Label Grid.Column="3" FontSize="10" Content="{x:Static p:Resources.VOXModeLower}"
+                                    <TextBlock Grid.Column="3" FontSize="10" Text="{x:Static p:Resources.VOXModeLower}"
                                            HorizontalAlignment="Right" />
                                 </Grid>
 
                             </StackPanel>
 
-                            <Label Grid.Row="3"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.VOXMinimumRMS}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.VOXMinimumRMS}" />
 
                             <StackPanel Grid.Row="3"
                                         Grid.Column="1" Margin="10">
@@ -323,11 +368,11 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" FontSize="10"
-                                           Content="{x:Static p:Resources.VOXMinimumRMSLower}"
+                                    <TextBlock Grid.Column="0" FontSize="10"
+                                           Text="{x:Static p:Resources.VOXMinimumRMSLower}"
                                            HorizontalAlignment="Left" />
-                                    <Label Grid.Column="2" FontSize="10"
-                                           Content="{x:Static p:Resources.VOXMinimumRMSHigher}"
+                                    <TextBlock Grid.Column="2" FontSize="10"
+                                           Text="{x:Static p:Resources.VOXMinimumRMSHigher}"
                                            HorizontalAlignment="Right" />
                                 </Grid>
                             </StackPanel>
@@ -351,44 +396,56 @@
                                 <RowDefinition />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AllowTransmissionsRecord}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AllowTransmissionsRecord}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AllowTransmissionsRecording, Mode=TwoWay}" />
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RecordTransmissions}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RecordTransmissions}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 ToggleValue="{Binding RecordTransmissions, Mode=TwoWay}" />
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.SingleFileMixdown}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.SingleFileMixdown}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 ToggleValue="{Binding SingleFileMixdown, Mode=TwoWay}" />
 
-                            <Label Grid.Row="3"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RecordingQuality}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RecordingQuality}" />
                             <StackPanel Grid.Row="3"
                                         Grid.Column="1" Margin="10">
 
@@ -411,20 +468,23 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" FontSize="10"
-                                           Content="{x:Static p:Resources.RecordingQuality0}"
+                                    <TextBlock Grid.Column="0" FontSize="10"
+                                           Text="{x:Static p:Resources.RecordingQuality0}"
                                            HorizontalAlignment="Left" />
-                                    <Label Grid.Column="1" FontSize="10"
-                                           Content="{x:Static p:Resources.RecordingQuality9}"
+                                    <TextBlock Grid.Column="1" FontSize="10"
+                                           Text="{x:Static p:Resources.RecordingQuality9}"
                                            HorizontalAlignment="Right" />
                                 </Grid>
                             </StackPanel>
 
-                            <Label Grid.Row="4"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.DisallowedAudioTone}" />
+                            <TextBlock Grid.Row="4"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.DisallowedAudioTone}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="4"
@@ -474,30 +534,31 @@
                                 <RowDefinition />
                                 <RowDefinition />
                                 <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
                             </Grid.RowDefinitions>
 
 
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AutoSelectInputProfile}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AutoSelectInputProfile}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AutoSelectInputProfile, Mode=TwoWay}" />
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.CheckForBetaUpdates}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.CheckForBetaUpdates}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="1"
@@ -505,66 +566,84 @@
                                 ToggleValue="{Binding CheckForBetaUpdates, Mode=TwoWay}" />
 
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.SetSRSPath}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.SetSRSPath}" />
 
                             <Button Grid.Row="2"
                                     Grid.Column="1"
                                     Command="{Binding SetSRSPathCommand}"
                                     Content="{x:Static p:Resources.SetSRSPathBtn}" />
 
-                            <Label Grid.Row="3"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RequireAdminToggle}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RequireAdminToggle}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="3"
                                 Grid.Column="1"
                                 ToggleValue="{Binding RequireAdminToggle, Mode=TwoWay}" />
 
-                            <Label Grid.Row="4"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.VAICOMTXInhibitEnabled}" />
+                            <TextBlock Grid.Row="4"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.VAICOMTXInhibitEnabled}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="4"
                                 Grid.Column="1"
                                 ToggleValue="{Binding VAICOMTXInhibitEnabled, Mode=TwoWay}" />
 
-                            <Label Grid.Row="5"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.ExpandInputDevices}" />
+                            <TextBlock Grid.Row="5"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.ExpandInputDevices}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="5"
                                 Grid.Column="1"
                                 ToggleValue="{Binding ExpandInputDevices, Mode=TwoWay}" />
 
-                            <Label Grid.Row="6"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AllowXInputController}" />
+                            <TextBlock Grid.Row="6"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AllowXInputController}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="6"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AllowXInputController, Mode=TwoWay}" />
 
-                            <Label Grid.Row="7"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.PlayConnectionSounds}" />
+                            <TextBlock Grid.Row="7"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.PlayConnectionSounds}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="7"
@@ -591,7 +670,7 @@
                     </GroupBox>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="{x:Static p:Resources.ProfileHeader}">
+            <!-- <GroupBox Header="{x:Static p:Resources.ProfileHeader}">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
                     <ComboBox x:Name="ControlsProfile"
                               Width="200"
@@ -610,7 +689,7 @@
                                 Command="{Binding DeleteProfileCommand}" />
                     </StackPanel>
                 </StackPanel>
-            </GroupBox>
+            </GroupBox> -->
 
             <GroupBox Header="{x:Static p:Resources.ProfileSettingsHeader}">
                 <Grid>
@@ -619,13 +698,6 @@
                         <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
@@ -680,11 +752,14 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
 
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioSwitchIsPTT}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioSwitchIsPTT}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="0"
@@ -692,22 +767,28 @@
                                 ToggleValue="{Binding RadioSwitchIsPTT, Mode=TwoWay}" />
 
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AutoSelectChannel}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AutoSelectChannel}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AutoSelectChannel, Mode=TwoWay}" />
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AlwaysAllowHotas}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AlwaysAllowHotas}" />
 
 
                             <clientSettingsControl:SettingsToggleControl
@@ -715,44 +796,56 @@
                                 Grid.Column="1"
                                 ToggleValue="{Binding AlwaysAllowHotasControls, Mode=TwoWay}" />
 
-                            <Label Grid.Row="3"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AlwaysAllowTransponderOverlay}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AlwaysAllowTransponderOverlay}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="3"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AlwaysAllowTransponderOverlayControls, Mode=TwoWay}" />
 
-                            <Label Grid.Row="4"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AllowDCSPTT}" />
+                            <TextBlock Grid.Row="4"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AllowDCSPTT}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="4"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AllowDCSPTT, Mode=TwoWay}" />
 
-                            <Label Grid.Row="5"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AllowRotaryIncrement}" />
+                            <TextBlock Grid.Row="5"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AllowRotaryIncrement}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="5"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AllowRotaryIncrement, Mode=TwoWay}" />
 
-                            <Label Grid.Row="6"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.PTTReleaseDelay}" />
+                            <TextBlock Grid.Row="6"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.PTTReleaseDelay}" />
 
                             <StackPanel Grid.Row="6"
                                         Grid.Column="1" Margin="10">
@@ -775,23 +868,26 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" FontSize="10"
-                                           Content="{x:Static p:Resources.PTTReleaseDelay0}" HorizontalAlignment="Left" />
-                                    <Label Grid.Column="1" FontSize="10"
-                                           Content="{x:Static p:Resources.PTTReleaseDelay500}"
+                                    <TextBlock Grid.Column="0" FontSize="10"
+                                           Text="{x:Static p:Resources.PTTReleaseDelay0}" HorizontalAlignment="Left" />
+                                    <TextBlock Grid.Column="1" FontSize="10"
+                                           Text="{x:Static p:Resources.PTTReleaseDelay500}"
                                            HorizontalAlignment="Center" />
-                                    <Label Grid.Column="2" FontSize="10"
-                                           Content="{x:Static p:Resources.PTTReleaseDelay1000}"
+                                    <TextBlock Grid.Column="2" FontSize="10"
+                                           Text="{x:Static p:Resources.PTTReleaseDelay1000}"
                                            HorizontalAlignment="Right" />
                                 </Grid>
 
                             </StackPanel>
 
-                            <Label Grid.Row="7"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.PTTStartDelay}" />
+                            <TextBlock Grid.Row="7"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.PTTStartDelay}" />
 
                             <StackPanel Grid.Row="7"
                                         Grid.Column="1" Margin="10">
@@ -814,23 +910,26 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" FontSize="10"
-                                           Content="{x:Static p:Resources.PTTStartDelay0}" HorizontalAlignment="Left" />
-                                    <Label Grid.Column="1" FontSize="10"
-                                           Content="{x:Static p:Resources.PTTStartDelay500}"
+                                    <TextBlock Grid.Column="0" FontSize="10"
+                                           Text="{x:Static p:Resources.PTTStartDelay0}" HorizontalAlignment="Left" />
+                                    <TextBlock Grid.Column="1" FontSize="10"
+                                           Text="{x:Static p:Resources.PTTStartDelay500}"
                                            HorizontalAlignment="Center" />
-                                    <Label Grid.Column="2" FontSize="10"
-                                           Content="{x:Static p:Resources.PTTStartDelay1000}"
+                                    <TextBlock Grid.Column="2" FontSize="10"
+                                           Text="{x:Static p:Resources.PTTStartDelay1000}"
                                            HorizontalAlignment="Right" />
                                 </Grid>
 
                             </StackPanel>
 
-                            <Label Grid.Row="8"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.DisableExpansionRadios}" />
+                            <TextBlock Grid.Row="8"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.DisableExpansionRadios}" />
 
 
                             <clientSettingsControl:SettingsToggleControl
@@ -874,23 +973,26 @@
                             </Grid.RowDefinitions>
 
 
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioRxEffects}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioRxEffects}" />
 
                             <WrapPanel Grid.Row="0"
                                        Grid.Column="1"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
                                        Orientation="Horizontal">
-                                <Label Content="{x:Static p:Resources.RadioRxStart}" />
+                                <TextBlock Text="{x:Static p:Resources.RadioRxStart}" />
 
                                 <clientSettingsControl:SettingsToggleControl
                                     ToggleValue="{Binding RadioRxStart, Mode=TwoWay}" />
 
-                                <Label Content="{x:Static p:Resources.RadioRxEnd}" />
+                                <TextBlock Text="{x:Static p:Resources.RadioRxEnd}" />
 
                                 <clientSettingsControl:SettingsToggleControl
                                     ToggleValue="{Binding RadioRxEnd, Mode=TwoWay}" />
@@ -898,11 +1000,14 @@
                             </WrapPanel>
 
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioTxEffects}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioTxEffects}" />
 
                             <WrapPanel Grid.Row="1"
                                        Grid.Column="1"
@@ -910,22 +1015,25 @@
                                        VerticalAlignment="Center"
                                        Orientation="Vertical">
                                 <WrapPanel Orientation="Horizontal">
-                                    <Label Content="{x:Static p:Resources.RadioTxStart}" />
+                                    <TextBlock Text="{x:Static p:Resources.RadioTxStart}" />
 
                                     <clientSettingsControl:SettingsToggleControl
                                         ToggleValue="{Binding RadioTxStart, Mode=TwoWay}" />
-                                    <Label Content="{x:Static p:Resources.RadioTxEnd}" />
+                                    <TextBlock Text="{x:Static p:Resources.RadioTxEnd}" />
                                     <clientSettingsControl:SettingsToggleControl
                                         ToggleValue="{Binding RadioTxEnd, Mode=TwoWay}" />
                                 </WrapPanel>
 
                             </WrapPanel>
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioStartTransmitEffect}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioStartTransmitEffect}" />
 
                             <ComboBox x:Name="RadioStartTransmitEffect"
                                       Grid.Row="2"
@@ -936,11 +1044,14 @@
                                       ItemsSource="{Binding RadioTransmissionStart}"
                                       SelectedItem="{Binding SelectedRadioTransmissionStartEffect, Mode=TwoWay}" />
 
-                            <Label Grid.Row="3"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioEndTransmitEffect}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioEndTransmitEffect}" />
 
                             <ComboBox x:Name="RadioEndTransmitEffect"
                                       Grid.Row="3"
@@ -951,11 +1062,14 @@
                                       ItemsSource="{Binding RadioTransmissionEnd}"
                                       SelectedItem="{Binding SelectedRadioTransmissionEndEffect, Mode=TwoWay}" />
 
-                            <Label Grid.Row="4"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.IntercomStartTransmitEffect}" />
+                            <TextBlock Grid.Row="4"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.IntercomStartTransmitEffect}" />
 
                             <ComboBox x:Name="IntercomStartTransmitEffect"
                                       Grid.Row="4"
@@ -966,11 +1080,14 @@
                                       ItemsSource="{Binding IntercomTransmissionStart}"
                                       SelectedItem="{Binding SelectedIntercomStartTransmitEffect, Mode=TwoWay}" />
 
-                            <Label Grid.Row="5"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.IntercomEndTransmitEffect}" />
+                            <TextBlock Grid.Row="5"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.IntercomEndTransmitEffect}" />
 
                             <ComboBox x:Name="IntercomEndTransmitEffect"
                                       Grid.Row="5"
@@ -981,33 +1098,42 @@
                                       ItemsSource="{Binding IntercomTransmissionEnd}"
                                       SelectedItem="{Binding SelectedIntercomEndTransmitEffect, Mode=TwoWay}" />
 
-                            <Label Grid.Row="6"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioEncryptionEffectsToggle}" />
+                            <TextBlock Grid.Row="6"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioEncryptionEffectsToggle}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="6"
                                 Grid.Column="1"
                                 ToggleValue="{Binding RadioEncryptionEffectsToggle, Mode=TwoWay}" />
 
-                            <Label Grid.Row="7"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioMIDSToggle}" />
+                            <TextBlock Grid.Row="7"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioMIDSToggle}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="7"
                                 Grid.Column="1"
                                 ToggleValue="{Binding RadioMIDSToggle, Mode=TwoWay}" />
 
-                            <Label Grid.Row="8"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioSoundEffects}" />
+                            <TextBlock Grid.Row="8"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioSoundEffects}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="8"
@@ -1015,22 +1141,28 @@
                                 ToggleValue="{Binding RadioSoundEffects, Mode=TwoWay}" />
 
 
-                            <Label Grid.Row="9"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.RadioSoundEffectsClipping}" />
+                            <TextBlock Grid.Row="9"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.RadioSoundEffectsClipping}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="9"
                                 Grid.Column="1"
                                 ToggleValue="{Binding RadioSoundEffectsClipping, Mode=TwoWay}" />
                             
-                            <Label Grid.Row="10"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.NATORadioTone}" />
+                            <TextBlock Grid.Row="10"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.NATORadioTone}" />
                             
                             <Border Grid.Row="10"
                                     Grid.Column="1" BorderBrush="CornflowerBlue" BorderThickness="1">
@@ -1046,11 +1178,14 @@
                             </StackPanel>
                                 </Border>
 
-                            <Label Grid.Row="11"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.HQEffect}" />
+                            <TextBlock Grid.Row="11"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.HQEffect}" />
 
                             <Border Grid.Row="11"
                                 Grid.Column="1" BorderBrush="CornflowerBlue" BorderThickness="1">
@@ -1064,77 +1199,98 @@
 
                                 </StackPanel>
                             </Border>
-                            <Label Grid.Row="12"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.BackgroundRadioNoise}" />
+                            <TextBlock Grid.Row="12"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.BackgroundRadioNoise}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="12"
                                 Grid.Column="1"
                                 ToggleValue="{Binding BackgroundRadioNoiseToggle, Mode=TwoWay}" />
 
-                            <Label Grid.Row="13"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.UHFEffectVolume}" />
+                            <TextBlock Grid.Row="13"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.UHFEffectVolume}" />
 
                             <clientSettingsControl:BackgroundEffectVolumeControl
                                 Grid.Row="13"
                                 Grid.Column="1"
                                 VolumeValue="{Binding UHFEffectVolume,Mode=TwoWay}" />
 
-                            <Label Grid.Row="14"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.VHFEffectVolume}" />
+                            <TextBlock Grid.Row="14"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.VHFEffectVolume}" />
 
                             <clientSettingsControl:BackgroundEffectVolumeControl
                                 Grid.Row="14"
                                 Grid.Column="1"
                                 VolumeValue="{Binding VHFEffectVolume,Mode=TwoWay}" />
 
-                            <Label Grid.Row="15"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.HFEffectVolume}" />
+                            <TextBlock Grid.Row="15"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.HFEffectVolume}" />
 
                             <clientSettingsControl:BackgroundEffectVolumeControl
                                 Grid.Row="15"
                                 Grid.Column="1"
                                 VolumeValue="{Binding HFEffectVolume,Mode=TwoWay}" />
 
-                            <Label Grid.Row="16"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.FMEffectVolume}" />
+                            <TextBlock Grid.Row="16"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.FMEffectVolume}" />
 
                             <clientSettingsControl:BackgroundEffectVolumeControl
                                 Grid.Row="16"
                                 Grid.Column="1"
                                 VolumeValue="{Binding FMEffectVolume,Mode=TwoWay}" />
 
-                            <Label Grid.Row="17"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AmbientEffectToggle}" />
+                            <TextBlock Grid.Row="17"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AmbientEffectToggle}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="17"
                                 Grid.Column="1"
                                 ToggleValue="{Binding AmbientEffectToggle, Mode=TwoWay}" />
 
-                            <Label Grid.Row="18"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AmbientEffectIntercomToggle}" />
+                            <TextBlock Grid.Row="18"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AmbientEffectIntercomToggle}" />
 
                             <clientSettingsControl:SettingsToggleControl
                                 Grid.Row="18"
@@ -1142,11 +1298,14 @@
                                 ToggleValue="{Binding AmbientEffectIntercomToggle, Mode=TwoWay}" />
 
 
-                            <Label Grid.Row="19"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.AmbientEffectVolume}" />
+                            <TextBlock Grid.Row="19"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.AmbientEffectVolume}" />
 
                             <clientSettingsControl:BackgroundEffectVolumeControl
                                 Grid.Row="19"
@@ -1185,103 +1344,136 @@
                             </Grid.RowDefinitions>
 
 
-                            <Label Grid.Row="0"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio1Config}" />
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio1Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio1Config"
                                                                         Grid.Row="0"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel1, Mode=TwoWay}" />
 
-                            <Label Grid.Row="1"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio2Config}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio2Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio2Config"
                                                                         Grid.Row="1"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel2, Mode=TwoWay}" />
 
-                            <Label Grid.Row="2"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio3Config}" />
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio3Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio3Config"
                                                                         Grid.Row="2"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel3, Mode=TwoWay}" />
-                            <Label Grid.Row="3"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio4Config}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio4Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio4Config"
                                                                         Grid.Row="3"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel4, Mode=TwoWay}" />
-                            <Label Grid.Row="4"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio5Config}" />
+                            <TextBlock Grid.Row="4"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio5Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio5Config"
                                                                         Grid.Row="4"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel5, Mode=TwoWay}" />
-                            <Label Grid.Row="5"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio6Config}" />
+                            <TextBlock Grid.Row="5"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio6Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio6Config"
                                                                         Grid.Row="5"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel6, Mode=TwoWay}" />
-                            <Label Grid.Row="6"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio7Config}" />
+                            <TextBlock Grid.Row="6"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio7Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio7Config"
                                                                         Grid.Row="6"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel7, Mode=TwoWay}" />
-                            <Label Grid.Row="7"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio8Config}" />
+                            <TextBlock Grid.Row="7"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio8Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio8Config"
                                                                         Grid.Row="7"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel8, Mode=TwoWay}" />
-                            <Label Grid.Row="8"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio9Config}" />
+                            <TextBlock Grid.Row="8"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio9Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio9Config"
                                                                         Grid.Row="8"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel9, Mode=TwoWay}" />
-                            <Label Grid.Row="9"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.Radio10Config}" />
+                            <TextBlock Grid.Row="9"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.Radio10Config}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="Radio10Config"
                                                                         Grid.Row="9"
                                                                         Grid.Column="1"
                                                                         VolumeValue="{Binding RadioChannel10, Mode=TwoWay}" />
-                            <Label Grid.Row="10"
-                                   Grid.Column="0"
-                                   HorizontalContentAlignment="Center"
-                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static p:Resources.IntercomConfig}" />
+                            <TextBlock Grid.Row="10"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Margin="5,2"
+                                       MaxWidth="250"
+                                       Text="{x:Static p:Resources.IntercomConfig}" />
                             <clientSettingsControl:RadioChannelConfigUi x:Name="IntercomConfig"
                                                                         Grid.Row="10"
                                                                         Grid.Column="1"
